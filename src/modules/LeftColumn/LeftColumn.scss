@@ -1,0 +1,97 @@
+.left-column {
+    width: 30%;
+    min-height: 100%;
+    background-color: #1E213A;
+    padding: 42px 0;
+}
+.app__location-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 42px;
+}
+.app__weather-icon {
+    margin: 15px 0;
+    width: 100%;
+    height: 380px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:after {
+        content: '';
+        background: url('../../assets/Cloud-background.png');
+        opacity: .3;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+.app__temperature {
+    margin: 50px 0;
+    text-align: center;
+}
+.app__current-temperature {
+    font-size: 120px;
+    margin-bottom: 70px;
+    font-weight: 700;
+    span {
+        font-size: 48px;
+        color: #9497a3;
+        font-weight: 600;
+    }
+}
+.app__current-weather {
+    font-size: 42px;
+    font-weight: 600;
+}
+.app__date-and-location {
+    text-align: center;
+}
+.app__current-date {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+        padding: 0 8px;
+        &:nth-child(1) {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            &:after {
+                content: '';
+                position: absolute;
+                width: 4px;
+                right: -2px;
+                height: 4px;
+                border-radius: 50%;
+                background-color: #fff;
+            }
+        }
+    }
+}
+.app__current-location {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-search-panel {
+    padding: 9px 12px;
+}
+.btn-current-location {
+    padding: 9px;
+    display: flex;
+    align-items: center;
+    border-radius: 50%;
+    justify-content: center;
+    img {
+        width: 24px;
+        height: 24px;
+    }
+}

@@ -1,0 +1,116 @@
+.app-search-panel {
+    width: 30%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    padding: 20px 48px;
+    background-color: #1E213A;
+}
+.search-panel__header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.search-panel__close {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 32px;
+            height: 1px;
+            background-color: #fff;
+        }
+        &:nth-child(1) {
+            &:after {
+                transform: rotate(45deg);
+            }
+        }
+        &:nth-child(2) {
+            &:after {
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}
+.search-panel__form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    .input,
+    .btn {
+        height: 60px;
+    }
+    .input {
+        margin-right: 10px;
+        border: 1px solid #E7E7EB;
+        background: none;
+        padding: 0 10px;
+        color: #fff;
+    }
+    .btn {
+        width: 150px;
+        margin-left: 10px;
+        background: #3C47E9;
+        &:hover {
+            background: #2d35b1;
+        }
+    }
+}
+.history__item {
+    width: 100%;
+    padding: 24px 12px;
+    font-size: 16px;
+    border: 1px solid transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 15px;
+    &:hover {
+        border: 1px solid #E7E7EB;
+        .history__item-arrow {
+            opacity: 1;
+        }
+    }
+    &-arrow {
+        opacity: 0;
+        span {
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+                width: 20px;
+                height: 1px;
+                background-color: #fff;
+                top: 0;
+                right: 0;
+            }
+            &:nth-child(1) {
+                &::after {
+                    transform: rotate(-32deg);
+                    margin-top: 5px;
+                }
+            }
+            &:nth-child(2) {
+                &::after {
+                    margin-top: -5px;
+                    transform: rotate(32deg);
+                }
+            }
+        }
+    }
+}

@@ -35,7 +35,8 @@ const cssLoaders = (extra) => {
             loader: MiniCssExtractPlugin.loader,
             options: {
                 hmr: isDev,
-                reloadAll: true
+                reloadAll: true,
+                publicPath: ''
             },
         },
         'css-loader'
@@ -94,7 +95,7 @@ module.exports = {
     },
     optimization: optimization(),
     devServer: {
-        port: 3300,
+        port: 3333,
         open: true,
         liveReload: true
     },

@@ -35,3 +35,12 @@ body {
 .input {
     width: 100%;
 }
+.btn-scale--active {
+    background: #E7E7EB;
+    color: #110E3C;
+    cursor: default;
+    &:hover {
+        background: #E7E7EB;
+        color: #110E3C;
+    }
+}

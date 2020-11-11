@@ -4,46 +4,54 @@ axios.defaults.baseURL = 'https://www.metaweather.com/api/';
 
 class WeatherAPI {
 
-    getLocationByQuery = async (city) => {
+    async getLocationByQuery(city) {
         try {
-            const query = await axios(`location/search/?query=${city.toLowerCase()}`, {
-                headers: {
-                    'Access-Control-Allow-Origin': '*',
-                    'Content-Type': 'application/json',
-                    withCredentials: true,
-                    mode: 'no-cors',
-                    crossDomain: true,
-                }
-            }) 
+            const result = await axios.get(`location/search/?query=${city.toLowerCase()}`)
 
-            return query;
+            if(result.status !== 200) {
+                throw new Error(result)
+            }
+
+            return await result
         }
-        catch(e) {
-            console.log(e);
+        catch (e) {
+            console.error(e);
+
+            return false
         }
     }
 
     getLocationByLatLng = async (lat, lng) => {
         try {
-            const query = await axios.get(`location/search/?lattlong=${lat},${lng}`)
-                .then(res => res.json())
+            const result = await axios.get(`location/search/?lattlong=${lat},${lng}`)
 
-            return query;
+            if(result.status !== 200) {
+                throw new Error(result)
+            }
+
+            return await result;
         }
         catch (e) {
-            console.log(e);
+            console.error(e);
+
+            return false
         }
     }
 
     getLocationByWoeid = async (woied) => {
         try {
-            const query = await axios.get(`location/${woied}`)
-                .then(res => res.json())
+            const result = await axios.get(`location/${woied}`)
+            
+            if(result.status !== 200) {
+                throw new Error(result)
+            }
 
-            return query;
+            return await result;
         }
         catch (e) {
             console.log(e);
+
+            return false
         }
     }
 
